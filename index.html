@@ -12,3 +12,52 @@
         </div>
         
     </header>
+
+    <main>
+        <section>
+            <div class="contenedor">
+                <div class="formulario">
+
+                    <!--Seleccion de unidades a convertir-->
+                    <label for="tipoConversion">Tipo de unidad:</label>
+                    <select id="tipoConversion">
+                        <option value="longitud">Longitud</option>
+                        <option value="masa">Masa</option>
+                        <option value="temperatura">Temperatura</option>
+                        <option value="velocidad">Velocidad</option>
+                    </select>
+
+                    <label for="valor">Valor a convertir:</label>
+                    <input type="number" id="valor" placeholder="Ingrese el valor">
+                    
+                    <label for="unidadOrigen">Unidad de origen:</label>
+                    <select id="unidadOrigen">
+                        <option value="metros">Metros</option>
+                        <option value="kilometros">Kilómetros</option>
+                        <option value="pulgadas">Pulgadas</option>
+                        <option value="pies">Pies</option>
+                        <option value="centimetros">Centimetros</option>
+                        <option value="milimetros">Milimetros</option>
+                    </select>
+
+                    <label for="unidadDestino">Unidad de destino:</label>
+                    <select id="unidadDestino">
+                        <option value="metros">Metros</option>
+                        <option value="kilometros">Kilómetros</option>
+                        <option value="pulgadas">Pulgadas</option>
+                        <option value="pies">Pies</option>
+                        <option value="centimetros">Centimetros</option>
+                        <option value="milimetros">Milimetros</option>
+                    </select>
+
+                    
+                    <label for="resultado">Resultado:</label>
+                    <input type="number" id="resultado" placeholder="Resultado obtenido">
+
+                    </div>
+                </div>
+            </div>           
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
