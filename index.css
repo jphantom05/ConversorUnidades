@@ -1,0 +1,110 @@
+/* ==========================================================================
+   1. RESETEO Y CONFIGURACIÓN GENERAL
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6; /* Un fondo gris claro muy suave */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    width: 100%;
+    max-width: 600px; /* Evita que el conversor se estire demasiado */
+    padding: 20px;
+}
+
+/* ==========================================================================
+   2. EL CONTENEDOR PRINCIPAL (LA TARJETA)
+   ========================================================================== */
+.contenedor {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra sutil moderna */
+    padding: 30px;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Separación uniforme entre bloques */
+}
+
+/* ==========================================================================
+   3. ESTILOS DE ETIQUETAS, INPUTS Y SELECTS
+   ========================================================================== */
+label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 6px;
+    display: block;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #334155;
+    background-color: #f8fafc;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+/* Efecto visual cuando el usuario hace clic o se posiciona en una caja */
+input:focus, select:focus {
+    border-color: #3b82f6; /* Azul moderno */
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* Quitar las flechas nativas feas de los inputs de tipo número */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* ==========================================================================
+   4. DISTRIBUCIÓN CON FLEXBOX (Las cajas en paralelo)
+   ========================================================================== */
+.bloque-unidad {
+    display: flex;
+    gap: 15px; /* Espacio entre el número y su lista de unidades */
+}
+
+/* Hace que tanto el número como el selector ocupen el mismo espacio (50% y 50%) */
+.bloque-unidad .grupo-control {
+    flex: 1;
+}
+
+/* Ajuste específico para el selector de tipo superior (ocupa todo el ancho) */
+.grupo-control.principal {
+    width: 100%;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 15px;
+}
+
+/* ==========================================================================
+   5. DISEÑO RESPONSIVO (Para celulares)
+   ========================================================================== */
+@media (max-width: 480px) {
+    .bloque-unidad {
+        flex-direction: column; /* En pantallas chicas, pone el select debajo del input */
+        gap: 10px;
+    }
+    
+    .contenedor {
+        padding: 20px;
+    }
+}

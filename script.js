@@ -1,6 +1,6 @@
 //libreta de unidades
 const unidadesCategoria = {
-    longitud: ["metros", "kilómetros", "millas", "pies", "pulgadas", "centímetros", "milímetros"],
+    longitud: ["metros", "kilometros", "millas", "pies", "pulgadas", "centimetros", "milimetros"],
     masa: ["gramos", "kilogramos", "libras", "onzas"],
     velocidad: ["km/h", "m/s", "mph", "nudos"],
     temperatura: ["Celsius", "Fahrenheit", "Kelvin"]
@@ -13,21 +13,39 @@ const unidadDestino = document.getElementById("unidadDestino");//selector de la 
 // Agregar un evento de cambio al selector de tipo de conversión
 selectorTipo.addEventListener("change", function() {
     const categoriaSeleccionada = selectorTipo.value;
-    
     const listaUnidades = unidadesCategoria[categoriaSeleccionada];
     
-    let opcionesHTML = "";
-    listaUnidades.forEach(function(unidad) {
-        opcionesHTML += `<option value="${unidad}">${unidad}</option>`;
+    let opcionesOrigenHTML = "";
+    let opcionesDestinoHTML = "";
+    
+    listaUnidades.forEach(function(unidad, index) {
+        // Origen: dejamos seleccionada la primera unidad por defecto (índice 0)
+        if (index === 0) {
+            opcionesOrigenHTML += `<option value="${unidad}" selected>${unidad}</option>`;
+        } else {
+            opcionesOrigenHTML += `<option value="${unidad}">${unidad}</option>`;
+        }
+
+        // Destino: dejamos seleccionada la segunda unidad por defecto (índice 1)
+        if (index === 1) {
+            opcionesDestinoHTML += `<option value="${unidad}" selected>${unidad}</option>`;
+        } else {
+            opcionesDestinoHTML += `<option value="${unidad}">${unidad}</option>`;
+        }
     });
-    unidadOrigen.innerHTML = opcionesHTML;
-    unidadDestino.innerHTML = opcionesHTML;
+    
+    // Inyectamos las listas independientes en cada selector
+    unidadOrigen.innerHTML = opcionesOrigenHTML;
+    unidadDestino.innerHTML = opcionesDestinoHTML;
+
+    // Calculamos de inmediato para que la pantalla se actualice con el cambio
+    actualizarValoraResultado();
 });
 
 //longitud base metros
 const factoresLongitud = {
     metros: 1,
-    kilómetros: 1000,
+    kilometros: 1000,
     millas: 1609.34,
     pies: 0.3048,
     pulgadas: 0.0254,

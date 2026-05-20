@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conversor de Unidadess</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <header>
@@ -14,11 +15,12 @@
     </header>
 
     <main>
-        <section>
-            <div class="contenedor">
-                <div class="formulario">
+    <section class="seccion-conversor">
+        <div class="contenedor">
+            <div class="formulario">
 
-                    <!--Seleccion de unidades a convertir-->
+                <!-- Bloque de Categoría Superior -->
+                <div class="grupo-control principal">
                     <label for="tipoConversion">Tipo de unidad:</label>
                     <select id="tipoConversion">
                         <option value="longitud">Longitud</option>
@@ -26,39 +28,52 @@
                         <option value="temperatura">Temperatura</option>
                         <option value="velocidad">Velocidad</option>
                     </select>
+                </div>
 
-                    <label for="valor">Valor a convertir:</label>
-                    <input type="number" id="valor" placeholder="Ingrese el valor">
+                <!-- Bloque de Entrada (Izquierdo / Origen) -->
+                <div class="bloque-unidad">
+                    <div class="grupo-control">
+                        <label for="valor">Valor a convertir:</label>
+                        <input type="number" id="valor" placeholder="Ingrese el valor">
+                    </div>
                     
-                    <label for="unidadOrigen">Unidad de origen:</label>
-                    <select id="unidadOrigen">
-                        <option value="metros">Metros</option>
-                        <option value="kilometros">Kilómetros</option>
-                        <option value="pulgadas">Pulgadas</option>
-                        <option value="pies">Pies</option>
-                        <option value="centimetros">Centimetros</option>
-                        <option value="milimetros">Milimetros</option>
-                        <option value="millas">Millas</option>
-                    </select>
-
-                    <label for="unidadDestino">Unidad de destino:</label>
-                    <select id="unidadDestino">
-                        <option value="metros">Metros</option>
-                        <option value="kilometros">Kilómetros</option>
-                        <option value="pulgadas">Pulgadas</option>
-                        <option value="pies">Pies</option>
-                        <option value="centimetros">Centimetros</option>
-                        <option value="milimetros">Milimetros</option>
-                    </select>
-
-                    
-                    <label for="resultado">Resultado:</label>
-                    <input type="number" id="resultado" placeholder="Resultado obtenido">
-
+                    <div class="grupo-control">
+                        <label for="unidadOrigen">Unidad de origen:</label>
+                        <select id="unidadOrigen">
+                            <option value="metros">Metros</option>
+                            <option value="kilometros">Kilómetros</option>
+                            <option value="pulgadas">Pulgadas</option>
+                            <option value="pies">Pies</option>
+                            <option value="centimetros">Centímetros</option>
+                            <option value="milimetros">Milímetros</option>
+                            <option value="millas">Millas</option>
+                        </select>
                     </div>
                 </div>
-            </div>           
-        </section>
-    </main>
+
+                <!-- Bloque de Salida (Derecho / Destino) -->
+                <div class="bloque-unidad">
+                    <div class="grupo-control">
+                        <label for="resultado">Resultado:</label>
+                        <input type="number" id="resultado" placeholder="Resultado obtenido">
+                    </div>
+
+                    <div class="grupo-control">
+                        <label for="unidadDestino">Unidad de destino:</label>
+                        <select id="unidadDestino">
+                            <option value="metros">Metros</option>
+                            <option value="kilometros">Kilómetros</option>
+                            <option value="pulgadas">Pulgadas</option>
+                            <option value="pies">Pies</option>
+                            <option value="centimetros">Centímetros</option>
+                            <option value="milimetros">Milímetros</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+        </div>           
+    </section>
+</main>
     <script src="script.js"></script>
 </body>
